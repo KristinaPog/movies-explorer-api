@@ -16,6 +16,7 @@ const NotFound = require('./errors/notFound');
 const allowedCors = [
   'http://localhost:3000',
   'http://localhost:3001',
+  'https://pogodina.nomoredomainsicu.ru',
 ];
 const { PORT = 3000 } = process.env;
 mongoose.connect('mongodb://127.0.0.1:27017/bitfilmsdb');
