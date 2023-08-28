@@ -50,8 +50,8 @@ module.exports.getMe = (req, res, next) => {
 };
 
 module.exports.updateUser = (req, res, next) => {
-  const { name, about } = req.body;
-  User.findByIdAndUpdate(req.user._id, { name, about }, { new: true, runValidators: true })
+  const { email, name } = req.body;
+  User.findByIdAndUpdate(req.user._id, { email, name }, { new: true, runValidators: true })
     .orFail(() => { next(new NotFound('Пользователь по указанному _id не найден')); })
     .then((user) => res.status(STATUS_CODE_OK).send(user))
     .catch((err) => {
